@@ -150,7 +150,7 @@ export default function EmrIntegrationHomepage() {
                 href="#stack"
                 className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
-                Explore integration capabilities
+              Explore integration capabilities
               </a>
             </div>
 
@@ -168,8 +168,8 @@ export default function EmrIntegrationHomepage() {
           </div>
 
           <div className="relative">
-            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur xl:p-8">
-              <div className="mb-6 flex items-center justify-between">
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-5 shadow-2xl shadow-black/30 backdrop-blur xl:p-6">
+              <div className="mb-4 flex items-center justify-between">
                 <div>
                   <p className="text-sm font-medium text-cyan-300">Core offering</p>
                   <h2 className="mt-1 text-2xl font-semibold text-white">Data flow, reporting, and compliance</h2>
@@ -179,22 +179,35 @@ export default function EmrIntegrationHomepage() {
                 </div>
               </div>
 
-              <div className="space-y-4">
-                {[
-                  "Patient engagement and intake integrations",
-                  "Secure API and interface orchestration",
-                  "ETL transformation and data validation",
-                  "Quality measure and reporting support",
-                  "Operational observability and auditability",
-                ].map((item) => (
-                  <div
-                    key={item}
-                    className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-4"
-                  >
-                    <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />
-                    <p className="text-sm leading-6 text-slate-300">{item}</p>
+              <div className="grid gap-5">
+                <div className="overflow-hidden rounded-[1.75rem] border border-white/10 bg-slate-950/70">
+                  <div className="relative aspect-[4/3] w-full">
+                    <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-500/10" />
+                    <img
+                      src="/branding/emr-port.png"
+                      alt="EMR Port illustration"
+                      className="h-full w-full object-contain p-4"
+                    />
                   </div>
-                ))}
+                </div>
+
+                <div className="space-y-4">
+                  {[
+                    "Patient engagement and intake integrations",
+                    "Secure API and interface orchestration",
+                    "ETL transformation and data validation",
+                    "Quality measure and reporting support",
+                    "Operational observability and auditability",
+                  ].map((item) => (
+                    <div
+                      key={item}
+                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-4"
+                    >
+                      <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                      <p className="text-sm leading-6 text-slate-300">{item}</p>
+                    </div>
+                  ))}
+                </div>
               </div>
 
               <div className="mt-6 rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 p-5">
