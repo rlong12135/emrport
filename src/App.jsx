@@ -1,154 +1,98 @@
-import { motion } from "framer-motion";
-import {
-  ArrowRight,
-  BarChart3,
-  CalendarRange,
-  CheckCircle2,
-  FileCheck2,
-  Fingerprint,
-  LayoutDashboard,
-  Mail,
-  MoveRight,
-  ShieldCheck,
-  Sparkles,
-  Workflow,
-} from "lucide-react";
+export default function EmrIntegrationHomepage() {
+  const services = [
+    {
+      title: "EMR & API Integration",
+      description:
+        "Connect engagement platforms, EMRs, and downstream systems using healthcare-aware integration patterns across APIs, HL7, FHIR, and custom interfaces.",
+    },
+    {
+      title: "Data Pipeline Engineering",
+      description:
+        "Design resilient ETL and data normalization workflows that move information cleanly from source systems into reporting, analytics, and operational tools.",
+    },
+    {
+      title: "MIPS & Compliance Enablement",
+      description:
+        "Support data-to-metrics-to-submission workflows for quality programs with traceable, audit-ready pipelines built for regulatory scrutiny.",
+    },
+    {
+      title: "Healthcare Systems Modernization",
+      description:
+        "Replace brittle handoffs and manual reconciliation with reliable distributed systems tailored for healthcare operations and growth.",
+    },
+  ];
 
-const services = [
-  {
-    icon: Workflow,
-    title: "EMR & API Integration",
-    description:
-      "Connect engagement platforms, EMRs, and downstream systems using healthcare-aware integration patterns across APIs, HL7, FHIR, and custom interfaces.",
-  },
-  {
-    icon: LayoutDashboard,
-    title: "Data Pipeline Engineering",
-    description:
-      "Design resilient ETL and data normalization workflows that move information cleanly from source systems into reporting, analytics, and operational tools.",
-  },
-  {
-    icon: FileCheck2,
-    title: "MIPS & Compliance Enablement",
-    description:
-      "Support data-to-metrics-to-submission workflows for quality programs with traceable, audit-ready pipelines built for regulatory scrutiny.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Healthcare Systems Modernization",
-    description:
-      "Replace brittle handoffs and manual reconciliation with reliable distributed systems tailored for healthcare operations and growth.",
-  },
-];
+  const stack = [
+    {
+      eyebrow: "Engagement + integration layer",
+      title: "Intelichart",
+      description:
+        "Frontend workflows, patient interaction, and API-connected data capture that feed clean information into the rest of the healthcare technology stack.",
+    },
+    {
+      eyebrow: "Data → metrics → submission pipeline",
+      title: "MIPSPro / Mingle / MDInteractive",
+      description:
+        "Measure calculation, quality reporting, and compliance submission systems that depend on accurate transformation, validation, and delivery of healthcare data.",
+    },
+    {
+      eyebrow: "Underlying capability",
+      title: "Healthcare-specific distributed systems + ETL + regulatory rigor",
+      description:
+        "Architecture built around secure data movement, system resilience, auditability, and operational reliability in highly constrained environments.",
+    },
+  ];
 
-const stack = [
-  {
-    eyebrow: "Engagement + integration layer",
-    title: "Intelichart",
-    description:
-      "Frontend workflows, patient interaction, and API-connected data capture that feed clean information into the rest of the healthcare technology stack.",
-    stat: "Front door",
-  },
-  {
-    eyebrow: "Data -> metrics -> submission pipeline",
-    title: "MIPSPro / Mingle / MDInteractive",
-    description:
-      "Measure calculation, quality reporting, and compliance submission systems that depend on accurate transformation, validation, and delivery of healthcare data.",
-    stat: "Compliance core",
-  },
-  {
-    eyebrow: "Underlying capability",
-    title: "Distributed systems + ETL + regulatory rigor",
-    description:
-      "Architecture built around secure data movement, system resilience, auditability, and operational reliability in constrained environments.",
-    stat: "System backbone",
-  },
-];
+  const outcomes = [
+    "Reduce manual data reconciliation",
+    "Improve reporting accuracy and traceability",
+    "Support compliance-ready submissions",
+    "Create scalable healthcare data infrastructure",
+  ];
 
-const outcomes = [
-  "Reduce manual data reconciliation",
-  "Improve reporting accuracy and traceability",
-  "Support compliance-ready submissions",
-  "Create scalable healthcare data infrastructure",
-];
+  const process = [
+    {
+      step: "01",
+      title: "Assess the workflow",
+      description:
+        "Map where patient, clinical, and reporting data is created, transformed, and delayed.",
+    },
+    {
+      step: "02",
+      title: "Design the integration",
+      description:
+        "Define interfaces, validation rules, ETL logic, and operational safeguards around the workflow.",
+    },
+    {
+      step: "03",
+      title: "Implement & stabilize",
+      description:
+        "Build reliable pipelines and service layers with observability, error handling, and audit support.",
+    },
+    {
+      step: "04",
+      title: "Support ongoing scale",
+      description:
+        "Adapt the system as regulations, reporting logic, and product needs evolve.",
+    },
+  ];
 
-const process = [
-  {
-    step: "01",
-    title: "Assess the workflow",
-    description:
-      "Map where patient, clinical, and reporting data is created, transformed, and delayed.",
-  },
-  {
-    step: "02",
-    title: "Design the integration",
-    description:
-      "Define interfaces, validation rules, ETL logic, and operational safeguards around the workflow.",
-  },
-  {
-    step: "03",
-    title: "Implement and stabilize",
-    description:
-      "Build reliable pipelines and service layers with observability, error handling, and audit support.",
-  },
-  {
-    step: "04",
-    title: "Support ongoing scale",
-    description:
-      "Adapt the system as regulations, reporting logic, and product needs evolve.",
-  },
-];
-
-const fadeUp = {
-  initial: { opacity: 0, y: 22 },
-  whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, amount: 0.22 },
-  transition: { duration: 0.7, ease: [0.16, 1, 0.3, 1] },
-};
-
-function SectionLabel({ children }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-[0.42em] text-cyan-300/90">
-      {children}
-    </p>
-  );
-}
-
-function Panel({ className = "", children }) {
-  return (
-    <div className={`rounded-[2rem] border border-white/10 bg-white/[0.06] ${className}`}>
-      {children}
-    </div>
-  );
-}
-
-export default function App() {
-  return (
-    <div className="relative min-h-screen overflow-hidden bg-[#04111f] text-slate-100">
-      <div className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div className="absolute left-1/2 top-[-10rem] h-[42rem] w-[42rem] -translate-x-1/2 rounded-full bg-cyan-500/14 blur-[120px]" />
-        <div className="absolute right-[-8rem] top-[12rem] h-[30rem] w-[30rem] rounded-full bg-sky-500/12 blur-[120px]" />
-        <div className="absolute left-[-10rem] top-[36rem] h-[28rem] w-[28rem] rounded-full bg-emerald-500/10 blur-[120px]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(34,211,238,0.12),_transparent_28%),linear-gradient(180deg,rgba(3,7,18,0.1),rgba(3,7,18,0.8))]" />
-        <div className="absolute inset-0 opacity-[0.12] [background-image:linear-gradient(rgba(255,255,255,0.06)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.06)_1px,transparent_1px)] [background-size:48px_48px]" />
+    <div className="min-h-screen bg-slate-950 text-slate-100">
+      <div className="absolute inset-0 -z-10 overflow-hidden">
+        <div className="absolute left-1/2 top-0 h-[38rem] w-[38rem] -translate-x-1/2 rounded-full bg-cyan-500/10 blur-3xl" />
+        <div className="absolute right-0 top-80 h-[28rem] w-[28rem] rounded-full bg-blue-500/10 blur-3xl" />
+        <div className="absolute left-0 top-[32rem] h-[24rem] w-[24rem] rounded-full bg-emerald-500/10 blur-3xl" />
       </div>
 
-      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/70 backdrop-blur-xl">
+      <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-10 w-10 items-center justify-center rounded-2xl border border-cyan-300/20 bg-cyan-300/10 text-cyan-200">
-              <Fingerprint size={18} />
+          <div>
+            <div className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
+              EMR Integration Services
             </div>
-            <div>
-              <div className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">
-                EMR Integration Services
-              </div>
-              <div className="text-xs text-slate-400">
-                Healthcare data systems and compliance infrastructure
-              </div>
-            </div>
+            <div className="text-xs text-slate-400">Healthcare data systems & compliance infrastructure</div>
           </div>
-
           <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
             <a href="#services" className="transition hover:text-white">
               Services
@@ -167,17 +111,14 @@ export default function App() {
       </header>
 
       <main>
-        <section className="mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-16 lg:grid-cols-[1.08fr_0.92fr] lg:px-8 lg:pb-28 lg:pt-24">
-          <motion.div {...fadeUp} className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-100">
-              <Sparkles size={16} />
-              Integration architecture for healthcare organizations and reporting workflows
+        <section className="mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pb-28 lg:pt-28">
+          <div className="max-w-3xl">
+            <div className="mb-5 inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">
+              Integration architecture for healthcare organizations, vendors, and reporting workflows
             </div>
-
-            <h1 className="max-w-2xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-7xl">
+            <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
               Clean, compliant EMR integrations for modern healthcare operations.
             </h1>
-
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
               We build healthcare-grade integration systems that connect patient engagement, EMR data flows, ETL pipelines, and compliance submission workflows into reliable, audit-ready infrastructure.
             </p>
@@ -185,21 +126,19 @@ export default function App() {
             <div className="mt-8 flex flex-col gap-4 sm:flex-row">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-6 py-3.5 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-cyan-200"
+                className="inline-flex items-center justify-center rounded-2xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
               >
                 Schedule a consultation
-                <ArrowRight size={16} />
               </a>
               <a
                 href="#stack"
-                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Explore integration capabilities
-                <MoveRight size={16} />
               </a>
             </div>
 
-            <div className="mt-10 grid gap-4 sm:grid-cols-2">
+            <div className="mt-12 grid gap-4 sm:grid-cols-2">
               {outcomes.map((item) => (
                 <div
                   key={item}
@@ -210,159 +149,95 @@ export default function App() {
                 </div>
               ))}
             </div>
-          </motion.div>
+          </div>
 
-          <motion.div {...fadeUp} transition={{ ...fadeUp.transition, delay: 0.08 }} className="relative">
-            <Panel className="relative overflow-hidden p-6 shadow-2xl shadow-black/30 backdrop-blur-xl lg:p-8">
-              <div className="absolute inset-0 bg-[linear-gradient(135deg,rgba(34,211,238,0.15),transparent_40%,rgba(59,130,246,0.12))]" />
-              <div className="relative z-10">
-                <div className="mb-6 flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-medium text-cyan-300">Core offering</p>
-                    <h2 className="mt-1 text-2xl font-semibold text-white">
-                      Data flow, reporting, and compliance
-                    </h2>
-                  </div>
-                  <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-3 py-2 text-xs font-medium text-emerald-200">
-                    Healthcare-specific
-                  </div>
+          <div className="relative">
+            <div className="rounded-[2rem] border border-white/10 bg-white/5 p-6 shadow-2xl shadow-black/30 backdrop-blur xl:p-8">
+              <div className="mb-6 flex items-center justify-between">
+                <div>
+                  <p className="text-sm font-medium text-cyan-300">Core offering</p>
+                  <h2 className="mt-1 text-2xl font-semibold text-white">Data flow, reporting, and compliance</h2>
                 </div>
-
-                <div className="grid gap-4">
-                  {[
-                    "Patient engagement and intake integrations",
-                    "Secure API and interface orchestration",
-                    "ETL transformation and data validation",
-                    "Quality measure and reporting support",
-                    "Operational observability and auditability",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/70 p-4"
-                    >
-                      <div className="mt-1.5 h-2.5 w-2.5 rounded-full bg-cyan-300" />
-                      <p className="text-sm leading-6 text-slate-300">{item}</p>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-6 rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/5 to-blue-500/10 p-5">
-                  <p className="text-xs uppercase tracking-[0.28em] text-slate-400">
-                    Representative stack
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-slate-200">
-                    Intelichart for engagement and integration workflows. MIPSPro, Mingle, and MDInteractive for transforming source data into quality metrics and compliance submissions.
-                  </p>
-                </div>
-
-                <div className="mt-6 grid gap-3 sm:grid-cols-3">
-                  {[
-                    ["FHIR", "Interfaces"],
-                    ["ETL", "Validation"],
-                    ["MIPS", "Submission"],
-                  ].map(([label, value]) => (
-                    <div
-                      key={label}
-                      className="rounded-2xl border border-white/10 bg-slate-950/70 p-4"
-                    >
-                      <div className="text-xs uppercase tracking-[0.28em] text-slate-400">
-                        {label}
-                      </div>
-                      <div className="mt-2 text-lg font-semibold text-white">{value}</div>
-                    </div>
-                  ))}
+                <div className="rounded-2xl border border-emerald-400/20 bg-emerald-400/10 px-3 py-2 text-xs font-medium text-emerald-200">
+                  Healthcare-specific
                 </div>
               </div>
-            </Panel>
-          </motion.div>
-        </section>
 
-        <section className="mx-auto max-w-7xl px-6 pb-10 lg:px-8">
-          <motion.div {...fadeUp} className="grid gap-4 md:grid-cols-3">
-            {[
-              ["Secure routing", "Encrypted, traceable data movement across systems."],
-              ["Operational clarity", "Dashboards and health signals for every pipeline stage."],
-              ["Audit support", "Evidence-ready design for compliance and reporting."],
-            ].map(([title, description]) => (
-              <Panel key={title} className="p-5">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-2xl bg-cyan-300/10 text-cyan-200">
-                    <CheckCircle2 size={18} />
+              <div className="space-y-4">
+                {[
+                  "Patient engagement and intake integrations",
+                  "Secure API and interface orchestration",
+                  "ETL transformation and data validation",
+                  "Quality measure and reporting support",
+                  "Operational observability and auditability",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-900/70 p-4"
+                  >
+                    <div className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                    <p className="text-sm leading-6 text-slate-300">{item}</p>
                   </div>
-                  <div className="text-lg font-semibold text-white">{title}</div>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-slate-300">{description}</p>
-              </Panel>
-            ))}
-          </motion.div>
+                ))}
+              </div>
+
+              <div className="mt-6 rounded-2xl border border-white/10 bg-gradient-to-br from-cyan-400/10 to-blue-400/10 p-5">
+                <p className="text-xs uppercase tracking-[0.25em] text-slate-400">Representative stack</p>
+                <p className="mt-3 text-sm leading-7 text-slate-200">
+                  Intelichart for engagement and integration workflows. MIPSPro, Mingle, and MDInteractive for transforming source data into quality metrics and compliance submissions.
+                </p>
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="services" className="mx-auto max-w-7xl px-6 py-18 lg:px-8">
-          <motion.div {...fadeUp} className="max-w-2xl">
-            <SectionLabel>Services</SectionLabel>
+        <section id="services" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">Services</p>
             <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Built for the technical realities of healthcare integration.
             </h2>
             <p className="mt-4 text-lg leading-8 text-slate-300">
               We help organizations replace fragmented data handoffs with dependable systems that are easier to operate, easier to audit, and better aligned with regulatory needs.
             </p>
-          </motion.div>
+          </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-            {services.map((service, index) => {
-              const Icon = service.icon;
-
-              return (
-                <motion.div
-                  key={service.title}
-                  {...fadeUp}
-                  transition={{ ...fadeUp.transition, delay: index * 0.05 }}
-                >
-                  <Panel className="group h-full p-6 transition hover:-translate-y-1 hover:bg-white/[0.08]">
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-cyan-400/25 to-blue-400/25 text-cyan-100 transition group-hover:scale-105">
-                      <Icon size={20} />
-                    </div>
-                    <h3 className="text-xl font-semibold text-white">{service.title}</h3>
-                    <p className="mt-3 text-sm leading-7 text-slate-300">{service.description}</p>
-                  </Panel>
-                </motion.div>
-              );
-            })}
+            {services.map((service) => (
+              <div
+                key={service.title}
+                className="group rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-xl shadow-black/20 transition hover:-translate-y-1 hover:bg-white/[0.07]"
+              >
+                <div className="mb-4 h-12 w-12 rounded-2xl bg-gradient-to-br from-cyan-400/20 to-blue-400/20" />
+                <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-300">{service.description}</p>
+              </div>
+            ))}
           </div>
         </section>
 
         <section id="stack" className="border-y border-white/10 bg-white/[0.03]">
           <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <motion.div {...fadeUp} className="max-w-3xl">
-              <SectionLabel>Platforms and architecture</SectionLabel>
+            <div className="max-w-3xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">Platforms & architecture</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 A practical view of the stack you support.
               </h2>
               <p className="mt-4 text-lg leading-8 text-slate-300">
-                The work spans frontend integration layers, reporting pipelines, and the distributed systems underneath them. Buyers do not need jargon. They need confidence that the whole workflow is understood.
+                The work spans frontend integration layers, reporting pipelines, and the distributed systems underneath them. Buyers do not need jargon—they need confidence that the whole workflow is understood.
               </p>
-            </motion.div>
+            </div>
 
             <div className="mt-12 grid gap-6 lg:grid-cols-3">
-              {stack.map((item, index) => (
-                <motion.div
+              {stack.map((item) => (
+                <div
                   key={item.title}
-                  {...fadeUp}
-                  transition={{ ...fadeUp.transition, delay: index * 0.06 }}
+                  className="rounded-[1.75rem] border border-white/10 bg-slate-950/70 p-6 shadow-xl shadow-black/20"
                 >
-                  <Panel className="h-full p-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <p className="text-xs font-medium uppercase tracking-[0.24em] text-cyan-300/90">
-                        {item.eyebrow}
-                      </p>
-                      <span className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] uppercase tracking-[0.22em] text-slate-300">
-                        {item.stat}
-                      </span>
-                    </div>
-                    <h3 className="mt-4 text-2xl font-semibold text-white">{item.title}</h3>
-                    <p className="mt-4 text-sm leading-7 text-slate-300">{item.description}</p>
-                  </Panel>
-                </motion.div>
+                  <p className="text-xs font-medium uppercase tracking-[0.22em] text-cyan-300/90">{item.eyebrow}</p>
+                  <h3 className="mt-4 text-2xl font-semibold text-white">{item.title}</h3>
+                  <p className="mt-4 text-sm leading-7 text-slate-300">{item.description}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -370,80 +245,69 @@ export default function App() {
 
         <section id="process" className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
           <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <motion.div {...fadeUp}>
-              <SectionLabel>Process</SectionLabel>
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">Process</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                 From fragmented workflow to dependable infrastructure.
               </h2>
               <p className="mt-4 text-lg leading-8 text-slate-300">
                 We focus on technical clarity, operational reliability, and the realities of working in regulated healthcare environments.
               </p>
-            </motion.div>
+            </div>
 
             <div className="grid gap-4">
-              {process.map((item, index) => (
-                <motion.div
+              {process.map((item) => (
+                <div
                   key={item.step}
-                  {...fadeUp}
-                  transition={{ ...fadeUp.transition, delay: index * 0.05 }}
+                  className="grid gap-4 rounded-[1.75rem] border border-white/10 bg-white/5 p-6 md:grid-cols-[90px_1fr] md:items-start"
                 >
-                  <Panel className="grid gap-4 p-6 md:grid-cols-[96px_1fr] md:items-start">
-                    <div>
-                      <div className="text-3xl font-semibold text-cyan-300">{item.step}</div>
-                      <div className="mt-3 h-px w-16 bg-white/15" />
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold text-white">{item.title}</h3>
-                      <p className="mt-2 text-sm leading-7 text-slate-300">{item.description}</p>
-                    </div>
-                  </Panel>
-                </motion.div>
+                  <div className="text-3xl font-semibold text-cyan-300">{item.step}</div>
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">{item.title}</h3>
+                    <p className="mt-2 text-sm leading-7 text-slate-300">{item.description}</p>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-7xl px-6 pb-20 lg:px-8 lg:pb-28">
-          <motion.div {...fadeUp}>
-            <Panel className="overflow-hidden p-8 lg:p-12">
-              <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-center">
-                <div>
-                  <SectionLabel>Why clients engage</SectionLabel>
-                  <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-                    Technical depth that maps to business outcomes.
-                  </h2>
-                  <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
-                    Whether the challenge is patient engagement integration, data normalization, or submission pipeline reliability, the goal is the same: less operational friction, cleaner reporting, and stronger confidence in the system.
-                  </p>
-                </div>
-
-                <div className="grid gap-4">
-                  {[
-                    "Integration design grounded in healthcare workflows",
-                    "ETL and system thinking for complex data movement",
-                    "Compliance-aware implementation with traceability in mind",
-                  ].map((item) => (
-                    <div
-                      key={item}
-                      className="flex items-start gap-3 rounded-2xl border border-white/10 bg-slate-950/60 p-4 text-sm text-slate-200"
-                    >
-                      <div className="mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-xl bg-cyan-300/10 text-cyan-200">
-                        <CalendarRange size={16} />
-                      </div>
-                      <span className="leading-6">{item}</span>
-                    </div>
-                  ))}
-                </div>
+          <div className="rounded-[2rem] border border-white/10 bg-gradient-to-br from-cyan-400/10 via-white/5 to-emerald-400/10 p-8 shadow-2xl shadow-black/25 lg:p-12">
+            <div className="grid gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-center">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">Why clients engage</p>
+                <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+                  Technical depth that maps to business outcomes.
+                </h2>
+                <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">
+                  Whether the challenge is patient engagement integration, data normalization, or submission pipeline reliability, the goal is the same: less operational friction, cleaner reporting, and stronger confidence in the system.
+                </p>
               </div>
-            </Panel>
-          </motion.div>
+
+              <div className="grid gap-4">
+                {[
+                  "Integration design grounded in healthcare workflows",
+                  "ETL and system thinking for complex data movement",
+                  "Compliance-aware implementation with traceability in mind",
+                ].map((item) => (
+                  <div
+                    key={item}
+                    className="rounded-2xl border border-white/10 bg-slate-950/60 p-4 text-sm text-slate-200"
+                  >
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </section>
 
-        <section id="contact" className="border-t border-white/10 bg-slate-950/70">
+        <section id="contact" className="border-t border-white/10 bg-slate-950/60">
           <div className="mx-auto max-w-7xl px-6 py-20 lg:px-8">
-            <motion.div {...fadeUp} className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
+            <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end">
               <div className="max-w-2xl">
-                <SectionLabel>Contact</SectionLabel>
+                <p className="text-sm font-semibold uppercase tracking-[0.28em] text-cyan-300">Contact</p>
                 <h2 className="mt-4 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
                   Let’s talk about your integration environment.
                 </h2>
@@ -455,20 +319,18 @@ export default function App() {
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a
                   href="mailto:hello@example.com"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl bg-cyan-300 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5 hover:bg-cyan-200"
+                  className="inline-flex items-center justify-center rounded-2xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
                 >
-                  <Mail size={16} />
                   hello@example.com
                 </a>
                 <a
                   href="#"
-                  className="inline-flex items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                  className="inline-flex items-center justify-center rounded-2xl border border-white/10 bg-white/5 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
                 >
                   Request an intro call
-                  <ArrowRight size={16} />
                 </a>
               </div>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>
