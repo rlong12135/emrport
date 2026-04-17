@@ -184,8 +184,8 @@ export default function EmrIntegrationHomepage() {
                   <div className="relative aspect-[4/3] w-full">
                     <div className="absolute inset-0 bg-gradient-to-br from-cyan-400/10 via-transparent to-blue-500/10" />
                     <img
-                      src="/branding/emr-port.png"
-                      alt="EMR Port illustration"
+                      src="/branding/maritime-medical-logistics-port.png"
+                      alt="Maritime medical logistics port illustration"
                       className="h-full w-full object-contain p-4"
                     />
                   </div>
