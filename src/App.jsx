@@ -87,11 +87,20 @@ export default function EmrIntegrationHomepage() {
 
       <header className="sticky top-0 z-30 border-b border-white/10 bg-slate-950/80 backdrop-blur">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
-          <div>
-            <div className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
-              EMR Integration Services
+          <div className="flex items-center gap-3">
+            <div className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-white/10 bg-white/5 shadow-lg shadow-black/20">
+              <img
+                src="/branding/emr-port.png"
+                alt="EMR Port brand mark"
+                className="h-full w-full object-cover object-center"
+              />
             </div>
-            <div className="text-xs text-slate-400">Healthcare data systems & compliance infrastructure</div>
+            <div>
+              <div className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">
+                EMR Port
+              </div>
+              <div className="text-xs text-slate-400">Healthcare data systems & compliance infrastructure</div>
+            </div>
           </div>
           <nav className="hidden items-center gap-8 text-sm text-slate-300 md:flex">
             <a href="#services" className="transition hover:text-white">
@@ -113,7 +122,14 @@ export default function EmrIntegrationHomepage() {
       <main>
         <section className="mx-auto grid max-w-7xl gap-14 px-6 pb-20 pt-20 lg:grid-cols-[1.15fr_0.85fr] lg:px-8 lg:pb-28 lg:pt-28">
           <div className="max-w-3xl">
-            <div className="mb-5 inline-flex items-center rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">
+            <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-cyan-400/20 bg-cyan-400/10 px-4 py-2 text-sm text-cyan-200">
+              <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border border-cyan-300/20 bg-white/10">
+                <img
+                  src="/branding/emr-port.png"
+                  alt="EMR Port"
+                  className="h-full w-full object-cover object-center"
+                />
+              </span>
               Integration architecture for healthcare organizations, vendors, and reporting workflows
             </div>
             <h1 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
