@@ -347,10 +347,10 @@ export default function EmrIntegrationHomepage() {
 
               <div className="flex flex-col gap-4 sm:flex-row">
                 <a
-                  href="mailto:hello@example.com"
+                  href="mailto:sales@emrware.com"
                   className="inline-flex items-center justify-center rounded-2xl bg-cyan-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-cyan-500/20 transition hover:-translate-y-0.5"
                 >
-                  hello@example.com
+                  sales@emrware.com
                 </a>
                 <a
                   href="#"
